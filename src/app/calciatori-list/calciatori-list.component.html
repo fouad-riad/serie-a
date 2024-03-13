@@ -1,0 +1,26 @@
+<div class="row row-cols-1 row-cols-md-6 g-4">
+    <div class="col" *ngFor="let calciatore of calciatori">
+      <div class="card">
+        <img [src]="calciatore.foto" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 
+          class="card-title" 
+          [ngClass]="{'bg-warning': calciatore.ruolo =='P', 'bg-success': calciatore.ruolo == 'D'}">
+            {{calciatore.nome_completo |uppercase }}
+          </h5>
+          <p class="card-text">
+            nazionalita:{{calciatore.paese }}
+          </p>
+
+          <p class="card-text">squadra:{{calciatore.squadra}}</p>
+          <h1><i  *ngIf="calciatore.v6! >= 15" class="bi bi-star-fill"></i></h1>
+          <button type="button" class="btn btn-primary" (click)="convertiInDiffensore(calciatore)">cambio ruolo:diffensore</button>
+          
+
+          <!-- <p *ngIf="calciatore.v6! > 15"><strong>FUORICLASSE</strong></p> -->
+        </div>
+      </div>
+    </div>
+  
+  </div>
+ <!--  matteo@labforweb.academy -->
